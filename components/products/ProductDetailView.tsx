@@ -94,19 +94,19 @@ export function ProductDetailView({
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 pt-8 sm:pt-12">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-start">
           {/* Left: Gallery Column (7 cols on desktop) */}
-          <div className="lg:col-span-7 flex flex-col-reverse sm:flex-row gap-4">
+          <div className="lg:col-span-7 flex flex-col-reverse sm:flex-row gap-5">
             {/* Thumbnails rail */}
             {galleryImages.length > 1 && (
-              <div className="flex sm:flex-col gap-3 overflow-x-auto sm:overflow-visible shrink-0">
+              <div className="flex sm:flex-col gap-3 overflow-x-auto sm:overflow-visible shrink-0 py-1">
                 {galleryImages.map((img, idx) => (
                   <button
                     key={idx}
                     onClick={() => setActiveImage(img)}
                     aria-label={`View packaging image ${idx + 1}`}
-                    className={`relative w-18 h-22 sm:w-20 sm:h-26 rounded-sm bg-white p-2 border transition-all ${
+                    className={`relative w-18 h-24 sm:w-20 sm:h-26 rounded-xl bg-[#FAF8F5] p-2 border transition-all cursor-pointer ${
                       activeImage === img
-                        ? "border-[var(--primary-green)] ring-1 ring-[var(--primary-green)] shadow-xs"
-                        : "border-[var(--border)] opacity-70 hover:opacity-100"
+                        ? "border-[#143627] ring-1 ring-[#143627] shadow-sm"
+                        : "border-stone-200/80 opacity-70 hover:opacity-100 hover:border-stone-300"
                     }`}
                   >
                     <Image
@@ -121,40 +121,44 @@ export function ProductDetailView({
               </div>
             )}
 
-            {/* Main Stage Viewport with object-contain */}
-            <div className="relative flex-1 aspect-[4/5] bg-white rounded-sm border border-[var(--border)] p-6 sm:p-10 flex items-center justify-center shadow-xs">
+            {/* Main Stage Viewport with generous whitespace and object-contain */}
+            <div className="relative flex-1 aspect-[4/5] bg-[#FAF8F5] rounded-2xl border border-stone-200/80 p-8 sm:p-14 flex items-center justify-center shadow-xs overflow-hidden">
               {product.badge && (
-                <span className="absolute top-4 left-4 font-eyebrow text-[10px] bg-[var(--primary-green)] text-white px-3 py-1 rounded-full z-10 shadow-xs">
+                <span className="absolute top-4 left-4 font-sans text-[9px] uppercase tracking-widest bg-[#143627] text-white px-3 py-1 font-medium z-10 shadow-xs">
                   {product.badge}
                 </span>
               )}
 
               <button
                 onClick={() => toggleWishlist(product.slug)}
-                aria-label="Add to wishlist"
-                className={`absolute top-4 right-4 p-2.5 rounded-full border border-[var(--border)] bg-[#FAF8F5] transition-colors z-10 ${
+                aria-label={isWishlisted ? "Remove from wishlist" : "Add to wishlist"}
+                className={`absolute top-4 right-4 p-2.5 rounded-full border bg-white/90 backdrop-blur-xs transition-colors z-10 shadow-xs cursor-pointer ${
                   isWishlisted
-                    ? "text-[var(--terracotta)] border-[var(--terracotta)]/40"
-                    : "text-[var(--muted-text)] hover:text-[var(--foreground)]"
+                    ? "text-[#B44C2D] border-[#B44C2D]/40"
+                    : "text-stone-400 border-stone-200 hover:text-stone-700"
                 }`}
               >
                 <Heart
                   className={`w-4 h-4 ${
-                    isWishlisted ? "fill-[var(--terracotta)]" : ""
+                    isWishlisted ? "fill-[#B44C2D]" : ""
                   }`}
                 />
               </button>
 
-              <div className="relative w-full h-full">
+              {/* Centered packaging with realistic elevation */}
+              <div className="relative w-full h-full flex items-center justify-center">
                 <Image
                   src={activeImage}
                   alt={product.name}
                   fill
                   priority
                   sizes="(max-width: 1024px) 100vw, 55vw"
-                  className="object-contain drop-shadow-xl"
+                  className="object-contain drop-shadow-[0_20px_35px_rgba(0,0,0,0.12)] transition-all duration-500"
                 />
               </div>
+
+              {/* Grounding subtle shadow */}
+              <div className="absolute bottom-5 left-1/2 -translate-x-1/2 w-2/3 h-3 bg-stone-900/6 blur-xs rounded-full pointer-events-none" />
             </div>
           </div>
 

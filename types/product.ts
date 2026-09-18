@@ -55,6 +55,7 @@ export interface Product {
   featured: boolean;
   published: boolean;
   mainImage: string;
+  hoverImage?: string;
   galleryImages: string[];
   editorialImages: string[];
   spiceLevel: 1 | 2 | 3 | 4 | 5;
@@ -85,5 +86,7 @@ export interface CategoryInfo {
   tagline: string;
   description: string;
   image: string;
+  heroImage?: string;
+  mobileHeroImage?: string;
   featuredCount: number;
 }

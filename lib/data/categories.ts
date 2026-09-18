@@ -9,6 +9,7 @@ export const CATEGORIES: CategoryInfo[] = [
     description:
       "Signature regional curry powders and heritage masala blends perfected with royal North Indian and coastal recipes.",
     image: "/images/products/paneer-lababdar/main.webp",
+    heroImage: "/images/collections/curry-masalas.webp",
     featuredCount: 6,
   },
   {
@@ -19,6 +20,7 @@ export const CATEGORIES: CategoryInfo[] = [
     description:
       "Clay oven and BBQ style spice rubs made with degi chili, roasted cumin, and black cardamom.",
     image: "/images/products/tandoori-masala/main.webp",
+    heroImage: "/images/collections/tandoori-grill.webp",
     featuredCount: 3,
   },
   {
@@ -29,6 +31,7 @@ export const CATEGORIES: CategoryInfo[] = [
     description:
       "Handcrafted herbs and artisanal spice seasonings for artisan pizzas, woodfired breads, and pasta.",
     image: "/images/products/pizza-seasoning/main.webp",
+    heroImage: "/images/collections/gourmet-seasonings.webp",
     featuredCount: 3,
   },
   {
@@ -39,6 +42,7 @@ export const CATEGORIES: CategoryInfo[] = [
     description:
       "Chatpata taste enhancers for sandwiches, roadside momos, hakka noodles, and wok tossed rice.",
     image: "/images/products/sandwich-masala/main.webp",
+    heroImage: "/images/collections/quick-bites.webp",
     featuredCount: 4,
   },
   {
@@ -49,6 +53,7 @@ export const CATEGORIES: CategoryInfo[] = [
     description:
       "Deep regional delicacies like Kolhapuri Tadka and Peri Peri Paneer Tikka for passionate culinary explorers.",
     image: "/images/products/kolhapuri-tadka/main.webp",
+    heroImage: "/images/collections/speciality-blends.webp",
     featuredCount: 2,
   },
 ];

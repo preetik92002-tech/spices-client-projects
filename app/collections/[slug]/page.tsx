@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import { CATEGORIES, getCategoryBySlug } from "@/lib/data/categories";
 import { getProductsByCategory } from "@/lib/data/products";
@@ -42,22 +43,34 @@ export default async function CollectionPage({ params }: CollectionPageProps) {
   }
 
   const categoryProducts = getProductsByCategory(category.slug);
+  const heroImg = category.heroImage || "/images/collections/the-spice-cellar.webp";
 
   return (
     <div className="w-full bg-[#FAF8F5]">
-      {/* Editorial Category Hero */}
-      <section className="bg-gradient-to-b from-[#143627] to-[#1c4231] text-[#FAF8F5] py-14 sm:py-20 text-center px-4">
-        <Container size="narrow">
-          <span className="font-eyebrow text-xs tracking-[0.24em] text-[var(--muted-gold)] uppercase block mb-2">
+      {/* Full-Width Photographic Editorial Category Hero */}
+      <section className="relative w-full h-[260px] sm:h-[320px] md:h-[380px] overflow-hidden flex items-center justify-center text-center">
+        <Image
+          src={heroImg}
+          alt={category.name}
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover object-center transform scale-102 transition-transform duration-1000"
+        />
+        {/* Cinematic dark scrim for flawless contrast and readability */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/55 to-black/40" />
+
+        <div className="relative z-10 px-4 max-w-3xl mx-auto">
+          <span className="font-eyebrow text-[10px] sm:text-xs tracking-[0.28em] text-[var(--muted-gold)] uppercase block mb-2 font-medium drop-shadow-sm">
             COLLECTION RESERVE
           </span>
-          <h1 className="font-editorial-heading text-3xl sm:text-4xl lg:text-5xl font-light uppercase tracking-tight text-[#FAF8F5]">
+          <h1 className="font-editorial-heading text-3xl sm:text-4xl lg:text-5xl font-light uppercase tracking-tight text-[#FAF8F5] drop-shadow-md">
             {category.name}
           </h1>
-          <p className="mt-3 text-xs sm:text-sm font-body-sans text-white/80 font-light leading-relaxed max-w-lg mx-auto">
+          <p className="mt-3 text-xs sm:text-sm font-body-sans text-white/90 font-light leading-relaxed max-w-xl mx-auto drop-shadow-sm">
             {category.description}
           </p>
-        </Container>
+        </div>
       </section>
 
       {/* Filterable Products View for this Category */}

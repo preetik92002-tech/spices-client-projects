@@ -47,15 +47,47 @@ export default function AboutPage() {
           </div>
 
           <div className="lg:col-span-6">
-            <div className="relative rounded-3xl bg-white border border-stone-200/80 p-8 sm:p-12 shadow-xs flex items-center justify-center overflow-hidden">
-              <div className="relative w-64 sm:w-80 aspect-[3/4]">
+            <div className="relative rounded-2xl bg-white border border-stone-200/80 p-4 sm:p-6 shadow-md flex items-center justify-center overflow-hidden group">
+              <div className="relative w-full aspect-[4/5] rounded-xl overflow-hidden">
                 <Image
-                  src="/images/products/paneer-lababdar-black.jpeg"
-                  alt="Flavouron Packaging Craft"
+                  src="/images/story/curry-masala-craft.webp"
+                  alt="Flavouron Royal Kitchen Curry Masala Botanical Formulation with Whole Spices"
                   fill
-                  className="object-contain drop-shadow-xl"
+                  priority
+                  className="object-contain transform group-hover:scale-103 transition-transform duration-700"
                 />
               </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Story Section 2: Botanical Purity & Cold Milling */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mb-20 sm:mb-28">
+          <div className="lg:col-span-6 order-2 lg:order-1">
+            <div className="relative rounded-2xl overflow-hidden shadow-lg border border-stone-200/80 aspect-[16/10]">
+              <Image
+                src="/images/story/coastal-lineup.webp"
+                alt="Flavouron Artisanal Spice Lineup on River Stones"
+                fill
+                className="object-cover"
+              />
+            </div>
+          </div>
+
+          <div className="lg:col-span-6 space-y-6 order-1 lg:order-2">
+            <span className="text-xs uppercase tracking-widest text-[#B44C2D] font-semibold">
+              The Cold-Milling Standard
+            </span>
+            <h2 className="font-editorial-heading text-3xl sm:text-4xl text-stone-900 leading-tight">
+              Aroma That Never Evaporates
+            </h2>
+            <div className="font-serif text-stone-600 text-sm sm:text-base space-y-4 leading-relaxed">
+              <p>
+                Every pouch of Flavouron Curry Masala begins with intact whole pods: whole green cardamoms from Idukki, star anise from the Northeast, hand-harvested black cardamom, and sun-dried stemless red chilis.
+              </p>
+              <p>
+                By keeping milling temperatures consistently below 40°C, the volatile essential oils remain trapped inside the micro-particles until the moment you toss them into warm ghee in your home kitchen. That is the Flavouron difference: <em className="text-stone-800">har bite mein energy</em>.
+              </p>
             </div>
           </div>
         </div>

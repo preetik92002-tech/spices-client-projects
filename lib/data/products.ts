@@ -47,7 +47,8 @@ export const PRODUCTS: Product[] = [
     featured: true,
     published: true,
     spiceLevel: 3,
-    mainImage: "/images/products/paneer-lababdar/main.webp",
+    mainImage: "/images/products/paneer-lababdar/editorial-01.webp",
+    hoverImage: "/images/products/paneer-lababdar/main.webp",
     galleryImages: ["/images/products/paneer-lababdar/gallery-01.webp","/images/products/paneer-lababdar/gallery-02.webp"],
     editorialImages: ["/images/products/paneer-lababdar/editorial-01.webp"],
     images: {
@@ -154,6 +155,7 @@ export const PRODUCTS: Product[] = [
     published: true,
     spiceLevel: 4,
     mainImage: "/images/products/tandoori-masala/main.webp",
+    hoverImage: "/images/products/tandoori-masala/main.webp",
     galleryImages: [],
     editorialImages: [],
     images: {
@@ -233,6 +235,7 @@ export const PRODUCTS: Product[] = [
     published: true,
     spiceLevel: 4,
     mainImage: "/images/products/tandoori-chicken-masala/main.webp",
+    hoverImage: "/images/products/tandoori-chicken-masala/main.webp",
     galleryImages: [],
     editorialImages: [],
     images: {
@@ -308,9 +311,10 @@ export const PRODUCTS: Product[] = [
     featured: true,
     published: true,
     spiceLevel: 2,
-    mainImage: "/images/products/veg-biryani-masala/main.webp",
+    mainImage: "/images/products/veg-biryani-masala/editorial-01.webp",
+    hoverImage: "/images/products/veg-biryani-masala/main.webp",
     galleryImages: ["/images/products/veg-biryani-masala/gallery-01.webp"],
-    editorialImages: ["/images/products/veg-biryani-masala/editorial-01.webp","/images/products/veg-biryani-masala/editorial-02.webp"],
+    editorialImages: ["/images/products/veg-biryani-masala/editorial-01.webp", "/images/products/veg-biryani-masala/editorial-02.webp"],
     images: {
       primary: "/images/products/veg-biryani-masala/main.webp",
       secondary: "/images/products/veg-biryani-masala/gallery-01.webp",
@@ -398,6 +402,7 @@ export const PRODUCTS: Product[] = [
     published: true,
     spiceLevel: 2,
     mainImage: "/images/products/pizza-seasoning/main.webp",
+    hoverImage: "/images/products/pizza-seasoning/main.webp",
     galleryImages: [],
     editorialImages: [],
     images: {
@@ -472,6 +477,7 @@ export const PRODUCTS: Product[] = [
     published: true,
     spiceLevel: 4,
     mainImage: "/images/products/peri-peri-paneer-tikka/main.webp",
+    hoverImage: "/images/products/peri-peri-paneer-tikka/main.webp",
     galleryImages: [],
     editorialImages: [],
     images: {
@@ -547,7 +553,8 @@ export const PRODUCTS: Product[] = [
     featured: true,
     published: true,
     spiceLevel: 2,
-    mainImage: "/images/products/sandwich-masala/main.webp",
+    mainImage: "/images/products/sandwich-masala/editorial-01.webp",
+    hoverImage: "/images/products/sandwich-masala/main.webp",
     galleryImages: ["/images/products/sandwich-masala/gallery-01.webp"],
     editorialImages: ["/images/products/sandwich-masala/editorial-01.webp"],
     images: {
@@ -624,9 +631,10 @@ export const PRODUCTS: Product[] = [
     featured: true,
     published: true,
     spiceLevel: 3,
-    mainImage: "/images/products/chhole-masala/main.webp",
+    mainImage: "/images/products/chhole-masala/editorial-01.webp",
+    hoverImage: "/images/products/chhole-masala/main.webp",
     galleryImages: [],
-    editorialImages: [],
+    editorialImages: ["/images/products/chhole-masala/editorial-01.webp"],
     images: {
       primary: "/images/products/chhole-masala/main.webp",
     },
@@ -700,9 +708,10 @@ export const PRODUCTS: Product[] = [
     featured: false,
     published: true,
     spiceLevel: 3,
-    mainImage: "/images/products/fish-curry-masala/main.webp",
+    mainImage: "/images/products/fish-curry-masala/editorial-01.webp",
+    hoverImage: "/images/products/fish-curry-masala/main.webp",
     galleryImages: [],
-    editorialImages: [],
+    editorialImages: ["/images/products/fish-curry-masala/editorial-01.webp"],
     images: {
       primary: "/images/products/fish-curry-masala/main.webp",
     },
@@ -774,9 +783,10 @@ export const PRODUCTS: Product[] = [
     featured: false,
     published: true,
     spiceLevel: 3,
-    mainImage: "/images/products/curry-masala/main.webp",
+    mainImage: "/images/products/curry-masala/editorial-01.webp",
+    hoverImage: "/images/products/curry-masala/main.webp",
     galleryImages: [],
-    editorialImages: [],
+    editorialImages: ["/images/products/curry-masala/editorial-01.webp"],
     images: {
       primary: "/images/products/curry-masala/main.webp",
     },
@@ -849,7 +859,8 @@ export const PRODUCTS: Product[] = [
     featured: true,
     published: true,
     spiceLevel: 3,
-    mainImage: "/images/products/momos-masala/main.webp",
+    mainImage: "/images/products/momos-masala/editorial-01.webp",
+    hoverImage: "/images/products/momos-masala/main.webp",
     galleryImages: ["/images/products/momos-masala/gallery-01.webp"],
     editorialImages: ["/images/products/momos-masala/editorial-01.webp"],
     images: {
@@ -923,6 +934,7 @@ export const PRODUCTS: Product[] = [
     published: true,
     spiceLevel: 2,
     mainImage: "/images/products/noodles-masala/main.webp",
+    hoverImage: "/images/products/noodles-masala/main.webp",
     galleryImages: [],
     editorialImages: [],
     images: {
@@ -994,7 +1006,8 @@ export const PRODUCTS: Product[] = [
     featured: true,
     published: true,
     spiceLevel: 2,
-    mainImage: "/images/products/fry-rice-masala/main.webp",
+    mainImage: "/images/products/fry-rice-masala/editorial-01.webp",
+    hoverImage: "/images/products/fry-rice-masala/main.webp",
     galleryImages: [],
     editorialImages: ["/images/products/fry-rice-masala/editorial-01.webp"],
     images: {
@@ -1068,7 +1081,8 @@ export const PRODUCTS: Product[] = [
     featured: true,
     published: true,
     spiceLevel: 2,
-    mainImage: "/images/products/pasta-masala/main.webp",
+    mainImage: "/images/products/pasta-masala/editorial-01.webp",
+    hoverImage: "/images/products/pasta-masala/main.webp",
     galleryImages: [],
     editorialImages: ["/images/products/pasta-masala/editorial-01.webp"],
     images: {
@@ -1143,6 +1157,7 @@ export const PRODUCTS: Product[] = [
     published: true,
     spiceLevel: 5,
     mainImage: "/images/products/kolhapuri-tadka/main.webp",
+    hoverImage: "/images/products/kolhapuri-tadka/main.webp",
     galleryImages: [],
     editorialImages: [],
     images: {

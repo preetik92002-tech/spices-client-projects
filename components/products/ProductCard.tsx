@@ -2,11 +2,11 @@
 
 import React from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { Plus, Heart, ArrowRight } from "lucide-react";
 import { Product } from "@/types/product";
 import { useCart } from "@/context/CartContext";
 import { useWishlist } from "@/context/WishlistContext";
+import { ProductImageSwap } from "./ProductImageSwap";
 
 interface ProductCardProps {
   product: Product;
@@ -16,12 +16,6 @@ export function ProductCard({ product }: ProductCardProps) {
   const { addItem } = useCart();
   const { isInWishlist, toggleWishlist } = useWishlist();
   const isFavorited = isInWishlist(product.slug);
-
-  const primaryImg = product.mainImage || product.images?.primary || "/images/brand/flavouron-logo.png";
-  const secondaryImg =
-    product.galleryImages?.[0] ||
-    product.editorialImages?.[0] ||
-    product.images?.secondary;
 
   return (
     <div className="group relative flex flex-col justify-between bg-white border border-stone-200/80 rounded-sm p-4 sm:p-5 transition-all duration-500 hover:shadow-xl hover:border-stone-300">
@@ -38,46 +32,18 @@ export function ProductCard({ product }: ProductCardProps) {
         />
       </button>
 
-      {/* Product Image Stage: Pristine neutral background, centered package, equal scale, subtle grounding shadow */}
+      {/* Product Image Stage with Two-Image Desktop Crossfade & Mobile Auto-Swap */}
       <div>
         <Link
           href={`/products/${product.slug}`}
-          className="block relative w-full aspect-[4/5] bg-[#FAF8F5] rounded-xs overflow-hidden select-none p-6 sm:p-8 flex items-center justify-center transition-colors duration-500 group-hover:bg-[#F5F2EB]"
+          className="block relative w-full overflow-hidden select-none"
         >
-          {/* Authentic Badge only if present */}
-          {product.badge && (
-            <span className="absolute top-3 left-3 z-10 bg-[#143627] text-white text-[9px] uppercase tracking-[0.2em] px-2.5 py-1 font-medium shadow-xs">
-              {product.badge}
-            </span>
-          )}
-
-          {/* Centered packaging canvas with equal visual scale */}
-          <div className="relative w-full h-full flex items-center justify-center">
-            {/* Primary packaging image */}
-            <Image
-              src={primaryImg}
-              alt={`Flavouron ${product.name} ${product.weight}`}
-              fill
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-              className={`object-contain drop-shadow-[0_12px_24px_rgba(0,0,0,0.09)] transition-all duration-700 ease-out group-hover:scale-105 ${
-                secondaryImg ? "group-hover:opacity-0" : ""
-              }`}
-            />
-
-            {/* Secondary packaging / alternate image reveal on hover */}
-            {secondaryImg && (
-              <Image
-                src={secondaryImg}
-                alt={`Flavouron ${product.name} reverse view`}
-                fill
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                className="object-contain drop-shadow-[0_12px_24px_rgba(0,0,0,0.09)] opacity-0 transition-all duration-700 ease-out group-hover:opacity-100 group-hover:scale-105"
-              />
-            )}
-          </div>
-
-          {/* Subtle natural grounding ellipse */}
-          <div className="absolute bottom-3 left-1/2 -translate-x-1/2 w-2/3 h-2 bg-stone-900/5 blur-xs rounded-full pointer-events-none group-hover:scale-110 transition-transform duration-500" />
+          <ProductImageSwap
+            primaryImage={product.mainImage}
+            secondaryImage={product.hoverImage}
+            alt={`Flavouron ${product.name} ${product.weight}`}
+            badge={product.badge}
+          />
         </Link>
 
         {/* Product Meta with generous editorial whitespace */}
